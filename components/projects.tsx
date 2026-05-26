@@ -5,6 +5,15 @@ import { ExternalLink, Github, Folder } from "lucide-react"
 
 const featuredProjects = [
   {
+    title: "OxyDocentes",
+    description:
+      "Tem como objetivo garantir rastreabilidade total das ações críticas dentro do sistema, especialmente aquelas que alteram o andamento de uma inscrição.",
+    image: "/projects/ecommerce.jpg",
+    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+    github: "#",
+    live: "#",
+  },
+  {
     title: "Mindcheck - Plataforma de Saúde Mental",
     description:
       "Plataforma de e-commerce completa com carrinho de compras, pagamentos integrados, dashboard admin e análise de vendas em tempo real.",
@@ -18,7 +27,7 @@ const featuredProjects = [
     description:
       "Dashboard interativo para visualização de dados com gráficos dinâmicos, filtros avançados e exportação de relatórios.",
     image: "/projects/dashboard.jpg",
-    technologies: ["React", "D3.js", "TailwindCSS", "Node.js"],
+    technologies: ["React", "TailwindCSS", "Node.js"],
     github: "#",
     live: "#",
   },
@@ -27,7 +36,7 @@ const featuredProjects = [
     description:
       "Aplicativo de rede social com feed em tempo real, sistema de mensagens, notificações push e autenticação OAuth.",
     image: "/projects/social.jpg",
-    technologies: ["Next.js", "Socket.io", "MongoDB", "Redis"],
+    technologies: ["Next.js","TailwindCSS", "TypeScript","REST API"],
     github: "#",
     live: "#",
   },
@@ -36,17 +45,24 @@ const featuredProjects = [
     description:
       "Aplicativo de rede social com feed em tempo real, sistema de mensagens, notificações push e autenticação OAuth.",
     image: "/projects/social.jpg",
-    technologies: ["Next.js", "Socket.io", "MongoDB", "Redis"],
+    technologies: ["Next.js","TailwindCSS", "TypeScript","REST API"],
     github: "#",
     live: "#",
   },
 ]
 
 const otherProjects = [
+   {
+    title: "Oxygeni Hub",
+    description: "Dashboard interativo para visualização de dados com gráficos dinâmicos, filtros avançados e exportação de relatórios.",
+    technologies: ["React", "TailwindCSS", "TypeScript"],
+    github: "#",
+    live: "#",
+  },
   {
     title: "Jusc-Juventude",
     description: "Aplicativo de previsão do tempo com geolocalização e dados em tempo real.",
-    technologies: ["React", "OpenWeather API", "Styled Components"],
+    technologies: ["React", "TailwindCSS", "TypeScript"],
     github: "#",
     live: "#",
   },

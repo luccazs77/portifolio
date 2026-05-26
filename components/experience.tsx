@@ -14,6 +14,15 @@ const experiences = [
       "Criei websites responsivos e landing pages para diversos clientes. Colaborei com designers para traduzir mockups em código funcional.",
     technologies: ["JavaScript", "HTML/CSS", "React", "Tailwind CSS","Node.js","TypeScript"],
   },
+  {
+    period: "2024 — 2026",
+    title: "Mentor do Incode Tech School",
+    company: "Oxygeni Hub",
+    companyUrl: "#",
+    description:
+      "Como mentor na Incode Tech School, desenvolvendo ainda mais minhas capacidades de comunicação e trabalho em equipe.",
+    technologies: ["JavaScript", "HTML/CSS", "React", "Python"],
+  },
    {
     period: "2024 — 2025",
     title: "Jovem Aprendiz",
@@ -54,7 +63,7 @@ export function Experience() {
       className="py-32 px-6 relative overflow-hidden bg-card/30"
     >
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section Header */}
+        
         <div className="flex items-center gap-4 mb-16">
           <h2
             className={`text-3xl md:text-4xl font-bold transition-all duration-700 delay-100 ${
@@ -71,7 +80,7 @@ export function Experience() {
           />
         </div>
 
-        {/* Experience List */}
+        
         <div className="space-y-2">
           {experiences.map((exp, index) => (
             <div
@@ -88,13 +97,13 @@ export function Experience() {
                 className="block p-6 rounded-xl transition-all duration-300 hover:bg-card border border-transparent hover:border-border"
               >
                 <div className="grid lg:grid-cols-[200px_1fr] gap-4 lg:gap-8">
-                  {/* Period */}
+                
                   <span className="text-sm text-muted-foreground font-mono">
                     {exp.period}
                   </span>
 
                   <div>
-                    {/* Title & Company */}
+                    
                     <h3 className="text-lg font-semibold mb-2 flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
                       {exp.title}
                       <span className="text-muted-foreground font-normal">·</span>

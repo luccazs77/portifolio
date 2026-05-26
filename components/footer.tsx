@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="py-8 px-6 border-t border-border">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* Copyright */}
+        
         <p className="text-sm text-muted-foreground flex items-center gap-1">
           Feito com <Heart className="w-4 h-4 text-primary fill-primary" /> por{" "}
           <a href="#" className="text-primary hover:underline">
@@ -20,7 +20,7 @@ export function Footer() {
           </a>
         </p>
 
-        {/* Social Links */}
+       
         <div className="flex items-center gap-4">
           {socials.map((social) => (
             <a
@@ -34,7 +34,7 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Year */}
+     
         <p className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} Todos os direitos reservados
         </p>

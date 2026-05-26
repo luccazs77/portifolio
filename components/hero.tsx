@@ -32,7 +32,7 @@ export function Hero() {
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated Background */}
+     
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute w-[600px] h-[600px] rounded-full opacity-20 blur-3xl transition-all duration-1000 ease-out"
@@ -52,11 +52,11 @@ export function Hero() {
         />
       </div>
 
-      {/* Grid Pattern */}
+      
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Animated Badge */}
+       
         <div
           className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-8 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -69,7 +69,7 @@ export function Hero() {
           <span className="text-sm text-muted-foreground">Disponívell para novos projetos</span>
         </div>
 
-        {/* Main Title with Stagger Animation */}
+        
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
           <span
             className={`block transition-all duration-700 delay-100 ${
@@ -109,7 +109,7 @@ export function Hero() {
           </span>
         </h1>
 
-        {/* Description */}
+        
         <p
           className={`text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed transition-all duration-700 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -122,7 +122,7 @@ export function Hero() {
           <span className="text-primary">TypeScript</span>.
         </p>
 
-        {/* Social Links */}
+    
         <div
           className={`flex items-center justify-center gap-4 mb-16 transition-all duration-700 delay-400 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -148,7 +148,7 @@ export function Hero() {
           ))}
         </div>
 
-        {/* Scroll Indicator */}
+       
         <div
           className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-700 delay-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
