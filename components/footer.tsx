@@ -1,11 +1,19 @@
 "use client"
 
-import { Github, Linkedin, Twitter, Heart } from "lucide-react"
+import { Github, Instagram, Linkedin } from "lucide-react"
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "https://github.com/luccazs77", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/perdo-lucaas/",
+    label: "LinkedIn",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/luccazs__/",
+    label: "Instagram",
+  },
 ]
 
 export function Footer() {
@@ -14,10 +22,8 @@ export function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         
         <p className="text-sm text-muted-foreground flex items-center gap-1">
-          Feito com <Heart className="w-4 h-4 text-primary fill-primary" /> por{" "}
-          <a href="#" className="text-primary hover:underline">
-            Dev
-          </a>
+          Pedro Luccazs &copy; {new Date().getFullYear()} 
+          
         </p>
 
        
@@ -27,6 +33,8 @@ export function Footer() {
               key={social.label}
               href={social.href}
               aria-label={social.label}
+              target="_blank"
+              rel="noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
               <social.icon className="w-5 h-5" />

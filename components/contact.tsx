@@ -1,26 +1,31 @@
 "use client"
 
-import React from "react"
-
 import { useEffect, useRef, useState } from "react"
-import { Mail, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react"
+import { Mail, MapPin, MessageCircle, Github, Instagram, Linkedin } from "lucide-react"
+
+const whatsappNumber = "5598981787408"
+const whatsappMessage = encodeURIComponent(
+  "Olá! Vi seu portfólio e gostaria de conversar sobre um projeto."
+)
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "https://github.com/luccazs77", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/perdo-lucaas/",
+    label: "LinkedIn",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/luccazs__/",
+    label: "Instagram",
+  },
   { icon: Mail, href: "mailto:dev@email.com", label: "Email" },
 ]
 
 export function Contact() {
   const sectionRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-  const [isSending, setIsSending] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,16 +43,6 @@ export function Contact() {
 
     return () => observer.disconnect()
   }, [])
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSending(true)
-    // Simulate sending
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSending(false)
-    setFormState({ name: "", email: "", message: "" })
-    alert("Mensagem enviada com sucesso!")
-  }
 
   return (
     <section
@@ -83,57 +78,21 @@ export function Contact() {
           ou quer apenas dizer oi, minha caixa de entrada está sempre aberta!
         </p>
 
-        {/* Contact Form */}
-        <form
-          onSubmit={handleSubmit}
-          className={`max-w-md mx-auto space-y-4 mb-12 transition-all duration-700 delay-300 ${
+        <div
+          className={`mb-12 transition-all duration-700 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <div className="grid gap-4">
-            <input
-              type="text"
-              placeholder="Seu nome"
-              value={formState.name}
-              onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-              required
-              className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 placeholder:text-muted-foreground"
-            />
-            <input
-              type="email"
-              placeholder="Seu email"
-              value={formState.email}
-              onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-              required
-              className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 placeholder:text-muted-foreground"
-            />
-            <textarea
-              placeholder="Sua mensagem"
-              value={formState.message}
-              onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-              required
-              rows={4}
-              className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 placeholder:text-muted-foreground resize-none"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={isSending}
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-all duration-300 disabled:opacity-50"
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white shadow-[0_12px_40px_-16px_rgba(37,211,102,0.8)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#20bd5a] hover:shadow-[0_16px_44px_-14px_rgba(37,211,102,0.9)]"
           >
-            {isSending ? (
-              <>
-                <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                Enviando...
-              </>
-            ) : (
-              <>
-                Enviar mensagem
-                <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-              </>
-            )}
-          </button>
-        </form>
+            <MessageCircle className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+            Conversar pelo WhatsApp
+          </a>
+        </div>
 
         {/* Info */}
         <div
@@ -143,11 +102,11 @@ export function Contact() {
         >
           <div className="flex items-center gap-2 text-muted-foreground">
             <Mail className="w-4 h-4 text-primary" />
-            <span>dev@email.com</span>
+            <span>pedrolucasdacosta@gmail.com</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <MapPin className="w-4 h-4 text-primary" />
-            <span>São Paulo, Brasil</span>
+            <span>São Luiz, MA Brasil</span>
           </div>
         </div>
 
@@ -162,6 +121,8 @@ export function Contact() {
               key={social.label}
               href={social.href}
               aria-label={social.label}
+              target={social.href.startsWith("http") ? "_blank" : undefined}
+              rel={social.href.startsWith("http") ? "noreferrer" : undefined}
               className="group p-3 rounded-full border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300"
               style={{ transitionDelay: `${index * 50}ms` }}
             >

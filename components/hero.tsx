@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import { ArrowDown, Github, Linkedin, Mail, Instagram } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Instagram } from "lucide-react"
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -129,14 +129,24 @@ export function Hero() {
           }`}
         >
           {[
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
-            { icon: Instagram, href: "#https://mail.google.com/mail/u/0/#inbox", label: "Email" },
+            { icon: Github, href: "https://github.com/luccazs77", label: "GitHub" },
+            {
+              icon: Linkedin,
+              href: "https://www.linkedin.com/in/perdo-lucaas/",
+              label: "LinkedIn",
+            },
+            {
+              icon: Instagram,
+              href: "https://www.instagram.com/luccazs__/",
+              label: "Instagram",
+            },
           ].map((social, index) => (
             <a
               key={social.label}
               href={social.href}
               aria-label={social.label}
+              target="_blank"
+              rel="noreferrer"
               className="group relative p-3 rounded-full border border-border bg-secondary/50 backdrop-blur-sm hover:border-primary hover:bg-primary/10 transition-all duration-300"
               style={{ transitionDelay: `${index * 50}ms` }}
             >

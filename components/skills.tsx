@@ -1,87 +1,162 @@
-import {
-  Atom, // React
-  Globe, // Next.js
-  FileCode2, // TypeScript
-  Braces, // JavaScript
-  Code2, // HTML/CSS
-  Wind, // Tailwind
-  Server, // Node.js
-  Plug, // REST APIs
-  GitBranch, // Git
-  Figma, // Figma
-  Monitor, // VS Code
-  Container, // Docker
-  RefreshCw, // CI/CD
-  TestTube, // Testing
-} from "lucide-react";
-import SkillBar from "./ui/SkillBar";
+"use client"
 
-const frontEnd = [
-  { name: "React", percentage: 95, icon: <Atom size={20} /> },
-  { name: "Next.js", percentage: 90, icon: <Globe size={20} /> },
-  { name: "TypeScript", percentage: 88, icon: <FileCode2 size={20} /> },
-  { name: "JavaScript", percentage: 95, icon: <Braces size={20} /> },
-  { name: "HTML/CSS", percentage: 98, icon: <Code2 size={20} /> },
-  { name: "Tailwind CSS", percentage: 92, icon: <Wind size={20} /> },
-];
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
-const backEnd = [
-  { name: "Node.js", percentage: 80, icon: <Server size={20} /> },
-  { name: "REST APIs", percentage: 85, icon: <Plug size={20} /> },
-];
+type Skill = {
+  name: string
+  description: string
+  logos: string[]
+  featured?: boolean
+}
 
-const tools = [
-  { name: "Git", percentage: 90, icon: <GitBranch size={20} /> },
-  { name: "Figma", percentage: 85, icon: <Figma size={20} /> },
-  { name: "VS Code", percentage: 95, icon: <Monitor size={20} /> },
-  { name: "Docker", percentage: 65, icon: <Container size={20} /> },
-  { name: "CI/CD", percentage: 70, icon: <RefreshCw size={20} /> },
-  { name: "Testing", percentage: 75, icon: <TestTube size={20} /> },
-];
-
-const SkillCategory = ({
-  title,
-  skills,
-  baseDelay,
-}: {
-  title: string;
-  skills: typeof frontEnd;
-  baseDelay: number;
-}) => (
-  <div>
-    <h3 className="text-lg font-bold text-primary mb-6">{title}</h3>
-    <div className="space-y-5">
-      {skills.map((skill, i) => (
-        <SkillBar
-          key={skill.name}
-          {...skill}
-          delay={baseDelay + i * 100}
-        />
-      ))}
-    </div>
-  </div>
-);
+const skills: Skill[] = [
+  {
+    name: "React",
+    description: "Interfaces componentizadas, performáticas e fáceis de evoluir.",
+    logos: ["/skills/react.svg"],
+    featured: true,
+  },
+  {
+    name: "Next.js",
+    description: "Aplicações modernas com renderização otimizada e boas práticas.",
+    logos: ["/skills/nextjs.svg"],
+    featured: true,
+  },
+  {
+    name: "TypeScript",
+    description: "Código mais seguro, previsível e preparado para crescer.",
+    logos: ["/skills/typescript.svg"],
+  },
+  {
+    name: "JavaScript",
+    description: "Experiências interativas com uma base sólida de linguagem.",
+    logos: ["/skills/javascript.svg"],
+  },
+  {
+    name: "HTML & CSS",
+    description: "Estruturas semânticas, acessíveis e responsivas.",
+    logos: ["/skills/html5.svg", "/skills/css.svg"],
+  },
+  {
+    name: "Tailwind CSS",
+    description: "Layouts consistentes e desenvolvimento visual ágil.",
+    logos: ["/skills/tailwindcss.svg"],
+  },
+  {
+    name: "Docker",
+    description: "Ambientes consistentes e aplicações executadas em containers.",
+    logos: ["/skills/docker.svg"],
+  },
+  {
+    name: "GitHub Actions",
+    description: "Automação de testes, builds e processos de integração contínua.",
+    logos: ["/skills/github-actions.svg"],
+  },
+  
+]
 
 const SkillsSection = () => {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true)
+      },
+      { threshold: 0.15 }
+    )
+
+    if (sectionRef.current) observer.observe(sectionRef.current)
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="w-full max-w-6xl">
-        <div className="flex items-center gap-3 mb-12">
-          <span className="text-primary text-sm font-mono">04.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+    <section
+      id="skills"
+      ref={sectionRef}
+      className="relative overflow-hidden px-6 py-32"
+    >
+      <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
+        <div className="mb-6 flex items-center gap-4">
+          <span
+            className={`font-mono text-sm text-primary transition-all duration-700 ${
+              isVisible ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+            }`}
+          >
+            04.
+          </span>
+          <h2
+            className={`text-3xl font-bold transition-all delay-100 duration-700 md:text-4xl ${
+              isVisible ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+            }`}
+          >
             Habilidades
           </h2>
-          <div className="flex-1 h-px bg-border ml-4" />
+          <div
+            className={`ml-2 h-px flex-1 origin-left bg-border transition-all delay-200 duration-1000 ${
+              isVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+            }`}
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <SkillCategory title="Front-End" skills={frontEnd} baseDelay={0} />
-          <SkillCategory title="Back-End" skills={backEnd} baseDelay={600} />
-          <SkillCategory title="Ferramentas" skills={tools} baseDelay={800} />
+        <p
+          className={`mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground transition-all delay-200 duration-700 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          }`}
+        >
+          Tecnologias que uso para construir interfaces rápidas, acessíveis e
+          levar aplicações com segurança até produção.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {skills.map((skill, index) => {
+            return (
+              <article
+                key={skill.name}
+                className={`group relative overflow-hidden rounded-2xl border bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_18px_50px_-24px_oklch(0.75_0.15_180/0.45)] ${
+                  skill.featured ? "border-primary/25" : "border-border"
+                } ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                }`}
+                style={{ transitionDelay: `${300 + index * 80}ms` }}
+              >
+                <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-primary/5 transition-transform duration-500 group-hover:scale-150" />
+
+                <div className="relative flex items-start gap-4">
+                  <div className="flex h-12 min-w-12 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-border bg-background/70 px-2 transition-all duration-300 group-hover:border-primary/40 group-hover:scale-105">
+                    {skill.logos.map((logo) => (
+                      <Image
+                        key={logo}
+                        src={logo}
+                        alt={`Logo ${skill.name}`}
+                        width={26}
+                        height={26}
+                        className="h-6 w-6 object-contain"
+                      />
+                    ))}
+                  </div>
+
+                  <div>
+                    <h3 className="mb-2 text-lg font-semibold text-foreground">
+                      {skill.name}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {skill.description}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SkillsSection;
+export default SkillsSection
