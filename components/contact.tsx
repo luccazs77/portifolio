@@ -55,13 +55,7 @@ export function Contact() {
 
       <div className="max-w-4xl mx-auto relative z-10 text-center">
         {/* Section Header */}
-        <span
-          className={`text-primary font-mono text-sm mb-4 block transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          05. E agora?
-        </span>
+       
         <h2
           className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 transition-all duration-700 delay-100 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"

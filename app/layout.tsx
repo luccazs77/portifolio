@@ -11,23 +11,23 @@ export const metadata: Metadata = {
   title: 'Luccazs Portfolio | Front-End Developer',
   description: 'Portfolio de desenvolvedor front-end especializado em criar experiências digitais incríveis',
   generator: 'v0.app',
-  // icons: {
-  //   icon: [
-  //     {
-  //       url: '/icon-light-32x32.png',
-  //       media: '(prefers-color-scheme: light)',
-  //     },
-  //     {
-  //       url: '/icon-dark-32x32.png',
-  //       media: '(prefers-color-scheme: dark)',
-  //     },
-  //     {
-  //       url: '/icon.svg',
-  //       type: 'image/svg+xml',
-  //     },
-  //   ],
-  //   apple: '/apple-icon.png',
-  // },
+  icons: {
+    icon: [
+      {
+        url: './projetos/logopl.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: './projetos/logopl.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: './projetos/logopl.png',
+        type: 'image/svg+xml',
+      },
+    ],
+    
+  },
 }
 
 export default function RootLayout({

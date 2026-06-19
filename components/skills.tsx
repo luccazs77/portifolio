@@ -83,13 +83,7 @@ const SkillsSection = () => {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <div className="mb-6 flex items-center gap-4">
-          <span
-            className={`font-mono text-sm text-primary transition-all duration-700 ${
-              isVisible ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
-            }`}
-          >
-            04.
-          </span>
+          
           <h2
             className={`text-3xl font-bold transition-all delay-100 duration-700 md:text-4xl ${
               isVisible ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"

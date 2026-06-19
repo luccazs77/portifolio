@@ -7,9 +7,9 @@ const featuredProjects = [
   {
     title: "OxyDocentes",
     description:
-      "Tem como objetivo garantir rastreabilidade total das ações críticas dentro do sistema, especialmente aquelas que alteram o andamento de uma inscrição.",
+      "O Oxydocentes é uma plataforma de captação de docentes do Grupo CEUMA, criada para tornar o processo de recrutamento e contratação mais ágil, eficiente e organizado.",
     image: "/projects/ecommerce.jpg",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+    technologies: ["Next.js", "TypeScript", "REST API", "PostgreSQL"],
     github: "#",
     live: "#",
   },
@@ -18,18 +18,17 @@ const featuredProjects = [
     description:
       "Plataforma de e-commerce completa com carrinho de compras, pagamentos integrados, dashboard admin e análise de vendas em tempo real.",
     image: "/projects/ecommerce.jpg",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-    github: "#",
-    live: "#",
+    technologies: ["Next.js", "TypeScript", "REST API", "PostgreSQL"],
+   
   },
   {
     title: "Incode Tech School",
     description:
       "Dashboard interativo para visualização de dados com gráficos dinâmicos, filtros avançados e exportação de relatórios.",
-    image: "/projects/dashboard.jpg",
+    image: "",
     technologies: ["React", "TailwindCSS", "Node.js"],
     github: "#",
-    live: "#",
+    live: "https://incode-tech-school.com.br/",
   },
   {
     title: "Aval",
@@ -38,7 +37,7 @@ const featuredProjects = [
     image: "/projects/social.jpg",
     technologies: ["Next.js","TailwindCSS", "TypeScript","REST API"],
     github: "#",
-    live: "#",
+    live: "https://aval.oxygeni.com.br/",
   },
   {
     title: "OxyHR",
@@ -46,8 +45,8 @@ const featuredProjects = [
       "Aplicativo de rede social com feed em tempo real, sistema de mensagens, notificações push e autenticação OAuth.",
     image: "/projects/social.jpg",
     technologies: ["Next.js","TailwindCSS", "TypeScript","REST API"],
-    github: "#",
-    live: "#",
+    
+   
   },
 ]
 
@@ -73,9 +72,9 @@ const otherProjects = [
     github: "#",
   },
   {
-    title: "Sistema de Gerenciamento do RH",
-    description: "Ferramenta para criar portfolios personalizados com templates modernos.",
-    technologies: ["Next.js", "MDX", "Vercel"],
+    title: "Sistema de Gerenciamento de Leilões",
+    description: "Plataforma de e-commerce completa com carrinho de compras, pagamentos integrados, dashboard admin e análise de vendas em tempo real.",
+    technologies: ["Next.js"],
     github: "#",
     live: "#",
   },
@@ -116,13 +115,7 @@ export function Projects() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-16">
-          <span
-            className={`text-primary font-mono text-sm transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
-            }`}
-          >
-            03.
-          </span>
+         
           <h2
             className={`text-3xl md:text-4xl font-bold transition-all duration-700 delay-100 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"

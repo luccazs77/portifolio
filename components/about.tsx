@@ -3,10 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 
 const stats = [
-  { value: "2+", label: "Anos de experiência" },
+  { value: "3+", label: "Anos de experiência" },
   { value: "10+", label: "Projetos entregues" },
-  { value: "30+", label: "Clientes satisfeitos" },
-  { value: "90%", label: "Taxa de aprovação" },
+ 
 ]
 
 export function About() {
@@ -36,12 +35,12 @@ export function About() {
       ref={sectionRef}
       className="py-32 px-6 relative overflow-hidden"
     >
-      {/* Background Decoration */}
+      
       <div className="absolute top-1/2 -translate-y-1/2 -left-48 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
       <div className="absolute top-1/4 -right-32 w-64 h-64 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section Header */}
+        
         <div className="flex items-center gap-4 mb-16">
           <h2
             className={`text-3xl md:text-4xl font-bold transition-all duration-700 delay-100 ${
@@ -59,7 +58,7 @@ export function About() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Text Content */}
+          
           <div className="space-y-6">
             <p
               className={`text-lg text-muted-foreground leading-relaxed transition-all duration-700 delay-200 ${
@@ -91,7 +90,7 @@ export function About() {
               <span className="text-foreground font-medium">acessibilidade web</span>.
             </p>
 
-            {/* Tech Stack */}
+          
             <div
               className={`pt-6 transition-all duration-700 delay-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -114,7 +113,7 @@ export function About() {
             </div>
           </div>
 
-          {/* Stats Grid */}
+         
           <div
             className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-300 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
@@ -126,7 +125,7 @@ export function About() {
                 className="group relative p-6 rounded-2xl border border-border bg-card hover:border-primary/50 transition-all duration-500 overflow-hidden"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                {/* Hover Glow */}
+              
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10">
