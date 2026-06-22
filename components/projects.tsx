@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { ExternalLink, Github, Folder } from "lucide-react"
+import { useEffect, useRef, useState } from "react";
+import { ExternalLink, Github, Folder } from "lucide-react";
 
 const featuredProjects = [
   {
@@ -16,15 +16,14 @@ const featuredProjects = [
   {
     title: "Mindcheck - Plataforma de Saúde Mental",
     description:
-      "Plataforma de e-commerce completa com carrinho de compras, pagamentos integrados, dashboard admin e análise de vendas em tempo real.",
+      "Desenvolvimento de uma plataforma de saúde voltada para avaliação e acompanhamento de pacientes, oferecendo recursos para registro, análise e gerenciamento de informações clínicas, proporcionando mais agilidade e eficiência no atendimento médico.",
     image: "/projects/ecommerce.jpg",
     technologies: ["Next.js", "TypeScript", "REST API", "PostgreSQL"],
-   
   },
   {
     title: "Incode Tech School",
     description:
-      "Dashboard interativo para visualização de dados com gráficos dinâmicos, filtros avançados e exportação de relatórios.",
+      "Desenvolvimento de uma landing page responsiva para apresentação do programa INCODE TECH SCHOOL, implementando interfaces modernas e intuitivas para exibir informações sobre o curso, cronograma, metodologia, benefícios e demais conteúdos institucionais.",
     image: "",
     technologies: ["React", "TailwindCSS", "Node.js"],
     github: "#",
@@ -33,9 +32,9 @@ const featuredProjects = [
   {
     title: "Aval",
     description:
-      "Aplicativo de rede social com feed em tempo real, sistema de mensagens, notificações push e autenticação OAuth.",
+      "Plataforma de avaliação voltada ao setor de atendimento, responsável por coletar feedbacks dos usuários, medir índices de satisfação e fornecer informações estratégicas para a melhoria contínua da qualidade dos serviços.",
     image: "/projects/social.jpg",
-    technologies: ["Next.js","TailwindCSS", "TypeScript","REST API"],
+    technologies: ["Next.js", "TailwindCSS", "TypeScript", "REST API"],
     github: "#",
     live: "https://aval.oxygeni.com.br/",
   },
@@ -44,64 +43,65 @@ const featuredProjects = [
     description:
       "Aplicativo de rede social com feed em tempo real, sistema de mensagens, notificações push e autenticação OAuth.",
     image: "/projects/social.jpg",
-    technologies: ["Next.js","TailwindCSS", "TypeScript","REST API"],
-    
-   
+    technologies: ["Next.js", "TailwindCSS", "TypeScript", "REST API"],
   },
-]
+];
 
 const otherProjects = [
-   {
+  {
     title: "Oxygeni Hub",
-    description: "Dashboard interativo para visualização de dados com gráficos dinâmicos, filtros avançados e exportação de relatórios.",
+    description:
+      "Criação de uma landing page moderna e responsiva para o Oxygeni Hub, com o objetivo de divulgar seus espaços colaborativos, programas de capacitação, cursos e iniciativas de inovação. Além de fornecer informações institucionais, a plataforma permite que usuários realizem reservas de ambientes de forma prática e organizada, melhorando a experiência e a gestão dos espaços.",
     technologies: ["React", "TailwindCSS", "TypeScript"],
     github: "#",
     live: "#",
   },
   {
     title: "Jusc-Juventude",
-    description: "Aplicativo de previsão do tempo com geolocalização e dados em tempo real.",
+    description:
+      "Plataforma desenvolvida para o JUSC com foco na divulgação das atividades, eventos e projetos do grupo de jovens, além de disponibilizar galerias de fotos e informações sobre ações realizadas e futuras iniciativas da comunidade.",
     technologies: ["React", "TailwindCSS", "TypeScript"],
     github: "#",
     live: "#",
   },
   {
     title: "Previsão do Tempo",
-    description: "Sistema de gerenciamento de tarefas com drag and drop e sincronização em nuvem.",
+    description:
+      "Sistema de gerenciamento de tarefas com drag and drop e sincronização em nuvem.",
     technologies: ["Vue.js", "Firebase", "Vuetify"],
     github: "#",
   },
   {
     title: "Sistema de Gerenciamento de Leilões",
-    description: "Plataforma de e-commerce completa com carrinho de compras, pagamentos integrados, dashboard admin e análise de vendas em tempo real.",
+    description:
+      "Plataforma de e-commerce completa com carrinho de compras, pagamentos integrados, dashboard admin e análise de vendas em tempo real.",
     technologies: ["Next.js"],
     github: "#",
     live: "#",
   },
-  
-]
+];
 
 export function Projects() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
-    )
+      { threshold: 0.1 },
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -115,10 +115,11 @@ export function Projects() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-16">
-         
           <h2
             className={`text-3xl md:text-4xl font-bold transition-all duration-700 delay-100 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-4"
             }`}
           >
             Projetos
@@ -137,7 +138,9 @@ export function Projects() {
             <div
               key={project.title}
               className={`group relative transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-12"
               }`}
               style={{ transitionDelay: `${index * 200 + 200}ms` }}
               onMouseEnter={() => setHoveredProject(index)}
@@ -176,7 +179,9 @@ export function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className={index % 2 === 1 ? "lg:order-1 lg:text-right" : ""}>
+                <div
+                  className={index % 2 === 1 ? "lg:order-1 lg:text-right" : ""}
+                >
                   <span className="text-primary font-mono text-sm mb-2 block">
                     Projeto em Destaque
                   </span>
@@ -294,5 +299,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }

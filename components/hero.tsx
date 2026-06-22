@@ -78,7 +78,7 @@ export function Hero() {
           >
             Olá, sou{" Luccazsz "}
             <span className="text-primary relative">
-              Dev
+              Desenvolvedor 
               <svg
                 className="absolute -bottom-2 left-0 w-full"
                 viewBox="0 0 100 10"
@@ -88,7 +88,7 @@ export function Hero() {
                   d="M0,5 Q25,0 50,5 T100,5"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="1.5"
                   className={`transition-all duration-1000 delay-700 ${
                     isVisible ? "opacity-100" : "opacity-0"
                   }`}

@@ -65,29 +65,27 @@ export function About() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Sou um desenvolvedor apaixonado por criar{" "}
-              <span className="text-foreground font-medium">interfaces acessíveis</span> e{" "}
-              <span className="text-foreground font-medium">pixel-perfect</span> que combinam design
-              cuidadoso com engenharia robusta.
+              Sou Desenvolvedor Front-end e Assistente de Inovação, apaixonado por tecnologia e pela criação de soluções digitais modernas e eficientes.Tenho experiência no desenvolvimento de aplicações web utilizando{" "}
+              <span className="text-foreground font-medium">React, Next.js, JavaScript, TypeScript e Angular</span> e{" "}
+              sempre buscando unir performance, usabilidade e boas práticas de desenvolvimento.
             </p>
             <p
               className={`text-lg text-muted-foreground leading-relaxed transition-all duration-700 delay-300 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Meu trabalho está na interseção entre design e desenvolvimento, criando experiências que
-              não apenas parecem ótimas, mas são meticulosamente construídas para{" "}
-              <span className="text-primary">performance</span> e{" "}
-              <span className="text-primary">usabilidade</span>.
+              Atualmente curso Engenharia de Software e estou constantemente aprimorando minhas habilidades por meio de projetos, capacitações e desafios práticos.{" "}
+              <span className="text-primary">Gosto de trabalhar em equipe, compartilhar conhecimento e contribuir para o desenvolvimento de produtos digitais</span> e{" "}
+              que gerem impacto real para usuários e organizações.
             </p>
             <p
               className={`text-lg text-muted-foreground leading-relaxed transition-all duration-700 delay-400 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Atualmente focado em construir produtos digitais escaláveis, trabalhando com equipes
-              multidisciplinares para implementar as melhores práticas em{" "}
-              <span className="text-foreground font-medium">acessibilidade web</span>.
+             Meu foco é evoluir continuamente como profissional, {" "}
+              <span className="text-foreground font-medium">evoluir continuamente como profissional</span>.
+              participando de projetos inovadores e transformando ideias em experiências digitais de qualidade.
             </p>
 
           

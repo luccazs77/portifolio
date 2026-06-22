@@ -11,7 +11,7 @@ const experiences = [
     company: "Oxygeni Hub",
     companyUrl: "#",
     description:
-      "Criei websites responsivos e landing pages para diversos clientes. Colaborei com designers para traduzir mockups em código funcional.",
+      "Atuo no desenvolvimento de aplicações web e soluções digitais, trabalhando com React, Next.js, TypeScript e Node.js. Participo da integração de APIs, implementação de novas funcionalidades e melhoria contínua de sistemas, contribuindo para projetos de inovação e transformação digital.",
     technologies: ["JavaScript", "HTML/CSS", "React", "Tailwind CSS","Node.js","TypeScript"],
   },
   {
@@ -29,7 +29,7 @@ const experiences = [
     company: "Oxygeni Hub",
     companyUrl: "#",
     description:
-      "Criei websites responsivos e landing pages para diversos clientes. Colaborei com designers para traduzir mockups em código funcional.",
+      "Iniciei minha trajetória profissional como Jovem Aprendiz na Oxygeni (DIT – CEUMA), onde tive meu primeiro contato com o ambiente corporativo na área de tecnologia. Nesse período,atuei no suporte a atividades de desenvolvimento e manutenção de sistemas, colaborando com a equipe em demandas do dia a dia e adquirindo experiência prática com processos e ferramentas utilizadas no desenvolvimento web.",
     technologies: ["JavaScript", "HTML/CSS", "React", "Tailwind CSS","Node.js","TypeScript"],
   },
 ]
@@ -154,7 +154,9 @@ export function Experience() {
           }`}
         >
           <a
-            href="#"
+            href="/curriculo-pedro-lucas.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
           >
             Ver currículo completo
